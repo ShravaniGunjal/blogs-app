@@ -1,0 +1,65 @@
+.header{
+    background-color: navy;
+    display: flex;
+    padding: 12px 35px;
+    color: white;
+    font-weight: bold;
+    justify-content: space-between;
+}
+.headerRightSection{
+    display: flex;
+    justify-content: end;
+    gap: 30px;
+}
+.background{
+    background-color: rgb(185, 185, 195);
+    height: 100vh;
+}
+.blogsLoginBox{
+    width: 21%;
+    margin: auto;
+    margin-top: 35px;
+    background-color: rgb(221, 221, 227);
+    padding: 10px 8px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px gray;
+    padding-bottom: 100px;
+}
+.blogs{
+    font-weight: bold;
+    font-size: 25px;
+}
+.blogsDes{
+    padding: 5px 0px;
+    border-bottom: 1px solid black;
+    font-size: 12px;
+    font-weight: 600;
+}
+.login{
+    color: navy;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0px;
+}
+.inputText{
+    font-weight: 500;
+    font-size: 13px;
+    /* padding: 10px 0px; */
+}
+.textBox{
+    width: 97%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    color: rgb(233, 231, 231);
+    margin-bottom: 20px;
+}
+.loginButton{
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: navy;
+    color: white;
+    border: none;
+}
