@@ -1,0 +1,23 @@
+.blogsBox{
+    background-color: rgb(221, 221, 227);
+    width: 45%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px 8px;
+    /* height: 20vh; */
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px 3px gray;
+}
+.footerButtons{
+    display: flex;
+    justify-content: end;
+    padding: 20px 0px;
+    gap: 10px;
+}
+.button{
+    color: white;
+    background-color: navy;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 5px;
+}

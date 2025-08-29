@@ -1,0 +1,19 @@
+.blogsLoginBox1{
+    width: 21%;
+    margin: auto;
+    margin-top: 35px;
+    background-color: rgb(221, 221, 227);
+    padding: 10px 8px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px gray;
+    padding-bottom: 30px;
+}
+.registerButton{
+    width: 100%;
+    background-color: navy;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    text-decoration: underline;
+}
