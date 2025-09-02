@@ -1,9 +1,14 @@
 import "./Title.css"
+import { useNavigate } from "react-router-dom";
 function Title() {
+    const navigate=useNavigate()
+     const navigateToDashBoard=()=>{
+    navigate("/")
+}
     return (
         <div className="background">
             <div className="header">
-                <div>Blogs</div>
+                <div onClick={navigateToDashBoard}>Blogs</div>
                 <div className="headerRightSection">
                     <span>Shravani Gunjal</span>
                     <span>Logout</span>

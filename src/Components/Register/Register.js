@@ -1,9 +1,14 @@
 import "./Register.css"
+import { useNavigate } from "react-router-dom"
 function Register(){
+const navigate=useNavigate()
+    const navigateToDashBoard=()=>{
+    navigate("/")
+}
     return(
         <div className="background">
         <div className="header">
-        <div>Blogs</div>
+        <div onClick={navigateToDashBoard}>Blogs</div>
         <div className="headerRightSection">
             <span>Login</span>
             <span>Register</span>
@@ -11,7 +16,7 @@ function Register(){
         </div>
         <div>
             <div className="blogsLoginBox1">
-                <div className="blogs">Blogs</div>
+                <div className="blogs" >Blogs</div>
                 <div className="blogsDes">Publish your passions, your way ...</div>
                 <div className="login">Register</div>
                  <div className="inputText">Name</div>

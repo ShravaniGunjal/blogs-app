@@ -1,6 +1,14 @@
+import { use } from "react";
 import "./Dashboard.css"
+import { useNavigate } from "react-router-dom";
 function Dashboard() {
-
+    const navigate=useNavigate();
+    const navigateToLogin=()=>{
+        navigate("/login")
+    }
+    const navigateToRegister=()=>{
+        navigate("/register")
+    }
     return (
         <div className="background">
             <div className="header">
@@ -15,8 +23,8 @@ function Dashboard() {
                     <div className="blogs">Blogs!</div>
                     <div className="blogsDes">Publish your passions, your way ...</div>
                     <div className="footerButtons">
-                    <button className="button">Login</button>
-                    <button className="button">Register</button>
+                    <button className="button" onClick={navigateToLogin}>Login</button>
+                    <button className="button" onClick={navigateToRegister}>Register</button>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,87 @@
+.Blogs{
+    font-weight: bold;
+    font-size: 25px;
+}
+.BlogsBackground{
+ width: 60%;
+ margin: auto
+}
+.blogText{
+    font-size: 14px;
+    padding: 10px 0px;
+    /* border-bottom: 1px solid black;  */
+}
+.blogHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black; 
+}
+.createNewPost{
+    padding: 5px 10px;
+    background-color: navy;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+}
+.desc{
+    background-color: lightgray;
+    padding: 8px 8px;
+    margin-top: 20px;
+   border-radius: 5px;
+   box-shadow: 2px 2px 2px 2px rgb(166, 160, 160);
+    /* border-bottom: 1px solid black; */
+
+}
+.blogtitle{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 8px 0px;
+}
+strong{
+    font-size: 15px;
+}
+.creation{
+    color: gray;
+    font-size: 14px;
+    /* border-bottom: 1px solid black; */
+}
+hr{
+    border: 1px solid black;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+}
+.like{
+    background-color: rgb(177, 20, 20);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+}
+.dislike{
+    background-color: rgb(5, 150, 46);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+     border: none;
+}
+.edit{
+    background-color: rgb(56, 49, 82);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+    border: none;
+    margin-right: 10px;
+}
+.delete{
+    background-color: rgb(133, 5, 150);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+     border: none;
+}
