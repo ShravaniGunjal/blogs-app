@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Login.css"
 import { useNavigate } from "react-router-dom";
-import { eventWrapper } from "@testing-library/user-event/dist/utils";
+
 function Login(){
 const navigate=useNavigate()
 // const navigateToHelloWorld=()=>{
@@ -19,7 +19,8 @@ function handleEmail(event){
     let user={...userData};
     user["email"]= event.target.value
     setuserData(user)
-}function handlePass(event){
+}
+function handlePass(event){
     let user={...userData};
     user["password"]= event.target.value
     setuserData(user)

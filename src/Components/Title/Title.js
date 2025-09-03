@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./Title.css"
 import { useNavigate } from "react-router-dom";
 function Title() {
@@ -5,21 +6,30 @@ function Title() {
      const navigateToDashBoard=()=>{
     navigate("/")
 }
+const [userTitle,setuserTitle]=useState({Title:""})
+function handleTitleData(){
+    console.log(userTitle)
+}
+function handleTitle(event){
+    let user={...userTitle}
+    user["Title"]=event.target.value
+    setuserTitle(user)
+}
     return (
         <div className="background">
             <div className="header">
                 <div onClick={navigateToDashBoard}>Blogs</div>
                 <div className="headerRightSection">
                     <span>Shravani Gunjal</span>
-                    <span>Logout</span>
+                    <span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Logout</span>
                 </div>
             </div>
             <div className="titleBox">
-                <input type="text" placeholder="Title" className="title" />
+                <input type="text" placeholder="Title" className="title" value={userTitle.Title} onChange={handleTitle}/>
                 <textarea>Description</textarea>
                 <div className="Buttons">
                     <button className="button">Cancel</button>
-                    <button className="button">Save</button>
+                    <button className="button" onClick={handleTitleData}>Save</button>
                 </div>
             </div>
         </div>
