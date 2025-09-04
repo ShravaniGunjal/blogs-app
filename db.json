@@ -1,0 +1,32 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "title": "Hello World"
+    },
+    {
+      "id": "8743",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "97cc",
+      "name": "shravani",
+      "email": "shravani.gunjal05@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "7391",
+      "name": "shravani",
+      "email": "shravani.gunjal05@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "802f",
+      "name": "asdfs",
+      "email": "shravani.gunjal05@gmail.com",
+      "password": "123"
+    }
+  ]
+}
