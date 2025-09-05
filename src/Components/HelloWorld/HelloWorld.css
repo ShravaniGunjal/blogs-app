@@ -85,3 +85,8 @@ hr{
     border-radius: 5px;
      border: none;
 }
+.backgroundForBlogs{
+    background-color: rgb(185, 185, 195);
+    height: 100vh;
+    height: 100%;
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Title.css"
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 function Title() {
     const navigate=useNavigate()
      const navigateToDashBoard=()=>{
@@ -8,7 +9,9 @@ function Title() {
 }
 const [userTitle,setuserTitle]=useState({Title:"", Desc:""})
 function handleTitleData(){
-    console.log(userTitle)
+     console.log(userTitle)
+    axios.post('http://localhost:3001/blogs', userTitle)
+    navigate("/helloworld")
 }
 function handleTitle(event){
     let user={...userTitle}
