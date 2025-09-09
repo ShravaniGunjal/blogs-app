@@ -3,16 +3,9 @@ import "./HelloWorld.css"
 import { useEffect, useState } from "react";
 import axios from "axios";
 function HelloWorld() {
-    const[like, setlike]=useState(0);
-    const[dislike, setdislike]=useState(0);
+    
     const[blogs,setblogs]=useState([])
-    function handleLike(){
-        setlike(like+1)
-    }
-    function handleDisLike(){
-        setdislike(dislike+1);
-        setlike(like-1);
-    }
+   
     const navigate=useNavigate()
     const navigateToTitle=()=>{
         navigate("/title")
@@ -64,8 +57,8 @@ useEffect(()=>{
                         <div>{singleEle.Description}</div>
                         <div className="buttons">
                             <div>
-                            <button className="like" onClick={handleLike}><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like</button>
-                            <button className="dislike" onClick={handleDisLike}><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Dislike</button>
+                            <button className="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like</button>
+                            <button className="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Dislike</button>
                             </div>
                             <div>
                             <button className="edit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>

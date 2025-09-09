@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Login.css"
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Login(){
 const navigate=useNavigate()
@@ -11,10 +12,29 @@ const navigateToDashBoard=()=>{
     navigate("/")
 }
 const[userData,setuserData]=useState({email:"", password:""})
+
 function handleLoginData(){
     console.log(userData)
-    navigate("/helloworld")
-}
+   
+    axios.get("http://localhost:3001/user", userData)
+
+    .then((response)=>{
+        
+ 
+    
+       response.data.map((singleElement)=>{
+            if(singleElement.email === userData.email && singleElement.password === userData.password){
+           console.log("Logged In Successfully")
+         navigate("/helloworld")
+            }
+            else{
+                console.log("Invalid user");
+                // alert("Invalid user")
+
+        }
+        })
+    
+})};
 function handleEmail(event){
     let user={...userData};
     user["email"]= event.target.value
@@ -25,6 +45,7 @@ function handlePass(event){
     user["password"]= event.target.value
     setuserData(user)
 }
+
 return (
     <div className="background">
         <div className="header">

@@ -39,6 +39,42 @@
       "name": "",
       "email": "",
       "password": ""
+    },
+    {
+      "id": "3e53",
+      "name": "Shavani Gunjal",
+      "email": "shravani.gunjal05@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "481a",
+      "name": "Shravani Gunjal",
+      "email": "shravani.gunjal05@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "c50f",
+      "name": "Shravani ",
+      "email": "shravani.gunjal05@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "8e82",
+      "name": "Shardul Pawar",
+      "email": "shardulpawar@gmail.com",
+      "password": "4567"
+    },
+    {
+      "id": "b98d",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "1e4a",
+      "name": "",
+      "email": "",
+      "password": ""
     }
   ],
   "blogs": [
