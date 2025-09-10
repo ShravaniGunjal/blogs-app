@@ -9,7 +9,7 @@ function Title() {
 }
 const [userTitle,setuserTitle]=useState({Title:"", Desc:""})
 function handleTitleData(){
-     console.log(userTitle)
+    console.log(userTitle)
     axios.post('http://localhost:3001/blogs', userTitle)
     navigate("/helloworld")
 }
@@ -34,7 +34,7 @@ function handleDesc(event){
             </div>
             <div className="titleBox">
                 <input type="text" placeholder="Title" className="title" value={userTitle.Title} onChange={handleTitle}/>
-                <textarea type="text" placeholder="Description" value={userTitle.Desc} onChange={handleDesc}>Description</textarea>
+                <textarea type="text" placeholder="Description" value={userTitle.Desc} onChange={handleDesc}></textarea>
                 <div className="Buttons">
                     <button className="button">Cancel</button>
                     <button className="button" onClick={handleTitleData}>Save</button>

@@ -13,7 +13,7 @@ function HelloWorld() {
     const navigateToDashBoard=()=>{
     navigate("/")
 }
-useEffect(()=>{
+function handleData(){
     axios.get('http://localhost:3001/blogs')
     .then((response)=>{
         setblogs(response.data.blogs || response.data);
@@ -21,7 +21,19 @@ useEffect(()=>{
     .catch((error)=>{
         console.error("Error fetching blogs:", error);
     })
+}
+useEffect(()=>{
+    
 },[]);
+function handleDeleteBlog(id){
+    axios.delete(`http://localhost:3001/blogs/${id}`)
+    .then((response)=>{
+        console.log("Blogs Deleted Successfully:", response.data.id)
+    })
+    .catch((error)=>{
+        console.error("Error fetching blogs:", error);
+    })
+}
     // const myObject = [
     //     {
     //         Title: "Hello World",
@@ -54,7 +66,7 @@ useEffect(()=>{
                         <div><strong>Created By</strong><i className="creation"> {singleEle.Created_By}</i></div>
                         <div><strong>Created At</strong><i className="creation"> {singleEle.Created_At}</i></div>
                         <hr/>
-                        <div>{singleEle.Description}</div>
+                        <div>{singleEle.Desc}</div>
                         <div className="buttons">
                             <div>
                             <button className="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like</button>
@@ -62,7 +74,7 @@ useEffect(()=>{
                             </div>
                             <div>
                             <button className="edit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
-                            <button className="delete"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+                            <button className="delete"><i class="fa fa-trash" aria-hidden="true" onClick={()=>handleDeleteBlog(singleEle.id)}></i> Delete</button>
                             </div>
                         </div>
                     </div>
