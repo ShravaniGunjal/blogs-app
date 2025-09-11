@@ -3,37 +3,64 @@ import "./HelloWorld.css"
 import { useEffect, useState } from "react";
 import axios from "axios";
 function HelloWorld() {
+
+    const [blogs, setblogs] = useState([])
     
-    const[blogs,setblogs]=useState([])
-   
-    const navigate=useNavigate()
-    const navigateToTitle=()=>{
+    
+
+    const navigate = useNavigate()
+    const navigateToTitle = () => {
         navigate("/title")
     }
-    const navigateToDashBoard=()=>{
-    navigate("/")
-}
-function handleData(){
-    axios.get('http://localhost:3001/blogs')
-    .then((response)=>{
-        setblogs(response.data.blogs || response.data);
-    })
-    .catch((error)=>{
-        console.error("Error fetching blogs:", error);
-    })
-}
-useEffect(()=>{
-    
-},[]);
-function handleDeleteBlog(id){
-    axios.delete(`http://localhost:3001/blogs/${id}`)
-    .then((response)=>{
-        console.log("Blogs Deleted Successfully:", response.data.id)
-    })
-    .catch((error)=>{
-        console.error("Error fetching blogs:", error);
-    })
-}
+    const navigateToDashBoard = () => {
+        navigate("/")
+    }
+
+    function handleData() {
+        axios.get('http://localhost:3001/blogs')
+            .then((response) => {
+                setblogs(response.data.blogs || response.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching blogs:", error);
+            })
+    }
+    useEffect(() => {
+        handleData()
+    }, []);
+
+    const handleDeleteBlog = (id) => {
+        axios.delete(`http://localhost:3001/blogs/${id}`)
+            .then((response) => {
+                console.log("Blogs Deleted Successfully:", response.data.id)
+                handleData()
+            })
+            .catch((error) => {
+                console.error("Error fetching blogs:", error);
+            })
+
+    }
+    const handleLikes = (id,likes) => {
+        axios.patch(`http://localhost:3001/blogs/${id}`,{likes: likes + 1} )
+            .then(() => {
+                handleData()
+            })
+            .catch(error => {
+                console.error("Error updating likes:", error);
+            });
+    }
+    const handleDisLikes = (id,dislikes) => {
+        axios.patch(`http://localhost:3001/blogs/${id}`, { dislikes: dislikes + 1 })
+            .then(() => {
+                handleData()
+            })
+            .catch(error => {
+                console.error("Error updating dislikes:", error);
+            });
+    }
+    // function handleEditBlog()
+    //     navigate(`/title/${blogs.id}`)
+    //     }
     // const myObject = [
     //     {
     //         Title: "Hello World",
@@ -53,28 +80,28 @@ function handleDeleteBlog(id){
             </div>
             <div className="BlogsBackground">
                 <div className="blogHeader">
-                <div>
-                <div className="Blogs">Blogs</div>
-                <div className="blogText">Publish your passions, your way ...</div>
-                </div>
-                <button className="createNewPost" onClick={navigateToTitle}><i class="fa fa-plus-circle" aria-hidden="true"></i> Create new Post</button>
+                    <div>
+                        <div className="Blogs">Blogs</div>
+                        <div className="blogText">Publish your passions, your way ...</div>
+                    </div>
+                    <button className="createNewPost" onClick={navigateToTitle}><i class="fa fa-plus-circle" aria-hidden="true"></i> Create new Post</button>
                 </div>
                 {blogs.map((singleEle) => (
                     <div className="desc">
-                        
-                        <div className="blogtitle">{singleEle.Title}</div>
+
+                        <div className="blogtitlgdgde" key={singleEle.id}>{singleEle.Title}</div>
                         <div><strong>Created By</strong><i className="creation"> {singleEle.Created_By}</i></div>
                         <div><strong>Created At</strong><i className="creation"> {singleEle.Created_At}</i></div>
-                        <hr/>
+                        <hr />
                         <div>{singleEle.Desc}</div>
                         <div className="buttons">
                             <div>
-                            <button className="like"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Like</button>
-                            <button className="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> Dislike</button>
+                                <button className="like"><i class="fa fa-thumbs-o-up" aria-hidden="true" onClick={() => handleLikes(singleEle.id, singleEle.likes)}></i>{singleEle.likes}</button>
+                                <button className="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true" onClick={() => handleDisLikes(singleEle.id, singleEle.dislikes)}></i>{singleEle.dislikes}</button>
                             </div>
                             <div>
-                            <button className="edit"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</button>
-                            <button className="delete"><i class="fa fa-trash" aria-hidden="true" onClick={()=>handleDeleteBlog(singleEle.id)}></i> Delete</button>
+                                <button className="edit"><i class="fa fa-pencil" aria-hidden="true" onClick={() => navigate(`/title/${singleEle.id}`)}></i> Edit</button>
+                                <button className="delete"><i class="fa fa-trash" aria-hidden="true" onClick={() => handleDeleteBlog(singleEle.id)}></i> Delete</button>
                             </div>
                         </div>
                     </div>

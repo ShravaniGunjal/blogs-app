@@ -25,6 +25,7 @@ function App() {
       <Route path='/' element={<Dashboard/>}/>
       <Route path='/helloworld' element={<HelloWorld/>}/>
       <Route path='/title' element={<Title/>}/>
+      <Route path="/title/:id" element={<Title />} />  
     </Routes>
     </Router>
    </div>

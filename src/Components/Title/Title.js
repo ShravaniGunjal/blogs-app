@@ -1,18 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Title.css"
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 function Title() {
     const navigate=useNavigate()
+    const {id}=useParams();
      const navigateToDashBoard=()=>{
     navigate("/")
 }
-const [userTitle,setuserTitle]=useState({Title:"", Desc:""})
-function handleTitleData(){
-    console.log(userTitle)
-    axios.post('http://localhost:3001/blogs', userTitle)
-    navigate("/helloworld")
-}
+const [userTitle,setuserTitle]=useState({Title:"", Desc:""});
+
+// function handleTitleData(){
+//     console.log(userTitle)
+//     axios.post('http://localhost:3001/blogs', userTitle)
+//     navigate("/helloworld")
+// }
 function handleTitle(event){
     let user={...userTitle}
     user["Title"]=event.target.value
@@ -23,6 +25,30 @@ function handleDesc(event){
     user["Desc"]=event.target.value
     setuserTitle(user)
 }
+useEffect(()=>{
+    axios.get(`http://localhost:3001/blogs/${id}`)
+    .then(response => {
+       setuserTitle({
+        Title:response.data.Title,
+        Desc:response.data.Desc
+    })
+    })
+     .catch(error => console.error("Error editing blog:", error));
+},[id]);
+function handleEditBlog(){
+    if (id) {
+      // Edit mode → PATCH
+      axios.put(`http://localhost:3001/blogs/${id}`, userTitle)
+        .then(() => navigate("/helloworld"))
+        .catch(error => console.error("Error editing blog:", error));
+    } else {
+      // Create mode → POST
+      axios.post("http://localhost:3001/blogs", userTitle)
+        .then(() => navigate("/helloworld"))
+        .catch(error => console.error("Error creating blog:", error));
+    }
+  };
+
     return (
         <div className="background">
             <div className="header">
@@ -37,7 +63,7 @@ function handleDesc(event){
                 <textarea type="text" placeholder="Description" value={userTitle.Desc} onChange={handleDesc}></textarea>
                 <div className="Buttons">
                     <button className="button">Cancel</button>
-                    <button className="button" onClick={handleTitleData}>Save</button>
+                    <button className="button" onClick={handleEditBlog}>Save</button>
                 </div>
             </div>
         </div>

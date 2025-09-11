@@ -75,38 +75,60 @@
       "name": "",
       "email": "",
       "password": ""
+    },
+    {
+      "id": "4db3",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "da25",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "0618",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "8630",
+      "name": "gaurav",
+      "email": "gaurav@gmail.com",
+      "password": "1234"
     }
   ],
   "blogs": [
     {
-      "id": "eb25",
-      "Title": "22",
-      "Desc": "dfjhgfkjk"
-    },
-    {
       "id": "9181",
       "Title": "My First blog",
-      "Desc": "Hii! I am Shravani."
+      "Desc": "Hii! I am Shravani.",
+      "likes": 23,
+      "dislikes": 16
     },
     {
       "id": "e6be",
       "Title": "My First blog",
-      "Desc": "Hii! I am Shravani."
+      "Desc": "Hii! I am Shravani.",
+      "likes": 9,
+      "dislikes": 9
     },
     {
-      "id": "6230",
       "Title": "My Second Blog",
-      "Desc": "Welcome to my Blog."
+      "Desc": "Welcome to my Blog. hii",
+      "id": "6230",
+      "likes": 10,
+      "dislikes": 13
     },
     {
-      "id": "0032",
-      "Title": "",
-      "Desc": ""
-    },
-    {
-      "id": "fd81",
-      "Title": "Gaurav",
-      "Desc": "hi i am gaurav"
+      "Title": "Rutuja",
+      "Desc": "hi i am Rutuja. Welcome",
+      "id": "0287",
+      "likes": 28,
+      "dislikes": 29
     }
   ]
 }
