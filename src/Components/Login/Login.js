@@ -11,6 +11,9 @@ const navigate=useNavigate()
 const navigateToDashBoard=()=>{
     navigate("/")
 }
+const navigateToRegister=()=>{
+        navigate("/register")
+    }
 const[userData,setuserData]=useState({email:"", password:""})
 
 function handleLoginData(){
@@ -24,6 +27,9 @@ function handleLoginData(){
     
        response.data.map((singleElement)=>{
             if(singleElement.email === userData.email && singleElement.password === userData.password){
+                localStorage.setItem('userName',singleElement.name)
+                localStorage.setItem('email',singleElement.email)
+               
            console.log("Logged In Successfully")
          navigate("/helloworld")
             }
@@ -52,7 +58,7 @@ return (
         <div onClick={navigateToDashBoard}>Blogs</div>
         <div className="headerRightSection">
             <span>Login</span>
-            <span>Register</span>
+            <span onClick={navigateToRegister}>Register</span>
         </div>
         </div>
         <div>

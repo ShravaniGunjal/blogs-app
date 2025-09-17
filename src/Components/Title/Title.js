@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Title.css"
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import moment from "moment";
 function Title() {
     const navigate=useNavigate()
     const {id}=useParams();
@@ -9,6 +10,7 @@ function Title() {
     navigate("/")
 }
 const [userTitle,setuserTitle]=useState({Title:"", Desc:""});
+
 
 // function handleTitleData(){
 //     console.log(userTitle)
@@ -28,22 +30,35 @@ function handleDesc(event){
 useEffect(()=>{
     axios.get(`http://localhost:3001/blogs/${id}`)
     .then(response => {
-       setuserTitle({
-        Title:response.data.Title,
-        Desc:response.data.Desc
-    })
+       setuserTitle(response.data)
     })
      .catch(error => console.error("Error editing blog:", error));
 },[id]);
 function handleEditBlog(){
+    const email=localStorage.getItem("email")
+    console.log(email)
     if (id) {
-      // Edit mode → PATCH
+      
       axios.put(`http://localhost:3001/blogs/${id}`, userTitle)
+    //    {
+    //      ...userTitle,
+    //      Created_By:email,
+    //      Created_At:moment().format('YYYY-MM-DD')
+      
+    //     })
+
         .then(() => navigate("/helloworld"))
-        .catch(error => console.error("Error editing blog:", error));
+        
+
     } else {
-      // Create mode → POST
-      axios.post("http://localhost:3001/blogs", userTitle)
+   
+      axios.post("http://localhost:3001/blogs", 
+        {
+         ...userTitle,
+         Created_By:email,
+         Created_At:moment().format('YYYY-MM-DD')
+      
+        })
         .then(() => navigate("/helloworld"))
         .catch(error => console.error("Error creating blog:", error));
     }
@@ -54,7 +69,7 @@ function handleEditBlog(){
             <div className="header">
                 <div onClick={navigateToDashBoard}>Blogs</div>
                 <div className="headerRightSection">
-                    <span>Shravani Gunjal</span>
+                    <span>{localStorage.getItem('userName')}</span>
                     <span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Logout</span>
                 </div>
             </div>

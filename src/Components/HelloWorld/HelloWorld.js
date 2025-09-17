@@ -74,7 +74,7 @@ function HelloWorld() {
             <div className="header">
                 <div onClick={navigateToDashBoard}>Blogs</div>
                 <div className="headerRightSection">
-                    <span>Shravani Gunjal</span>
+                    <span>{localStorage.getItem('userName')}</span>
                     <div><span><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Logout</span></div>
                 </div>
             </div>
@@ -89,19 +89,19 @@ function HelloWorld() {
                 {blogs.map((singleEle) => (
                     <div className="desc">
 
-                        <div className="blogtitlgdgde" key={singleEle.id}>{singleEle.Title}</div>
+                        <div className="blogtitle" key={singleEle.id}>{singleEle.Title}</div>
                         <div><strong>Created By</strong><i className="creation"> {singleEle.Created_By}</i></div>
                         <div><strong>Created At</strong><i className="creation"> {singleEle.Created_At}</i></div>
                         <hr />
                         <div>{singleEle.Desc}</div>
                         <div className="buttons">
                             <div>
-                                <button className="like"><i class="fa fa-thumbs-o-up" aria-hidden="true" onClick={() => handleLikes(singleEle.id, singleEle.likes)}></i>{singleEle.likes}</button>
-                                <button className="dislike"><i class="fa fa-thumbs-o-down" aria-hidden="true" onClick={() => handleDisLikes(singleEle.id, singleEle.dislikes)}></i>{singleEle.dislikes}</button>
+                                <button className="like" onClick={() => handleLikes(singleEle.id, singleEle.likes)}><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {singleEle.likes}</button>
+                                <button className="dislike" onClick={() => handleDisLikes(singleEle.id, singleEle.dislikes)}><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> {singleEle.dislikes}</button>
                             </div>
                             <div>
-                                <button className="edit"><i class="fa fa-pencil" aria-hidden="true" onClick={() => navigate(`/title/${singleEle.id}`)}></i> Edit</button>
-                                <button className="delete"><i class="fa fa-trash" aria-hidden="true" onClick={() => handleDeleteBlog(singleEle.id)}></i> Delete</button>
+                                <button className="edit" onClick={() => navigate(`/title/${singleEle.id}`)}><i class="fa fa-pencil" aria-hidden="true" ></i> Edit</button>
+                                <button className="delete" onClick={() => handleDeleteBlog(singleEle.id)}><i class="fa fa-trash" aria-hidden="true" ></i> Delete</button>
                             </div>
                         </div>
                     </div>

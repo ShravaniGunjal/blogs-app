@@ -99,6 +99,48 @@
       "name": "gaurav",
       "email": "gaurav@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "912a",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "a046",
+      "name": "",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "bde3",
+      "name": "Shravani",
+      "email": "shravi@gmail.com",
+      "password": "3456"
+    },
+    {
+      "id": "4d2b",
+      "name": "Gaurav",
+      "email": "gaurav@gmail.com",
+      "password": "4567"
+    },
+    {
+      "id": "5f05",
+      "name": "Shardul",
+      "email": "shardul@gmail.com",
+      "password": "3456"
+    },
+    {
+      "id": "1557",
+      "name": "Shardul",
+      "email": "shardul@gmail.com",
+      "password": "3456"
+    },
+    {
+      "id": "a410",
+      "name": "Shravi",
+      "email": "shr@gmail.com",
+      "password": "1234"
     }
   ],
   "blogs": [
@@ -106,15 +148,8 @@
       "id": "9181",
       "Title": "My First blog",
       "Desc": "Hii! I am Shravani.",
-      "likes": 23,
-      "dislikes": 16
-    },
-    {
-      "id": "e6be",
-      "Title": "My First blog",
-      "Desc": "Hii! I am Shravani.",
-      "likes": 9,
-      "dislikes": 9
+      "likes": 32,
+      "dislikes": 31
     },
     {
       "Title": "My Second Blog",
@@ -129,6 +164,39 @@
       "id": "0287",
       "likes": 28,
       "dislikes": 29
+    },
+    {
+      "id": "731e",
+      "Title": "My Blog!",
+      "Desc": "Hii, my name is Gaurav Pawar.",
+      "createdBy": "gaurav@gmail.com"
+    },
+    {
+      "Title": "Shardul Pawar",
+      "Desc": "hii....",
+      "id": "5416"
+    },
+    {
+      "id": "9159",
+      "Title": "Shravani Gunjal",
+      "Desc": "Hello everyone.",
+      "Created_By": "shr@gmail.com",
+      "likes": 75
+    },
+    {
+      "id": "80b6",
+      "Title": "Blog",
+      "Desc": "My blog.",
+      "Created_By": "shr@gmail.com",
+      "Created_At": "2025-09-17T09:38:06.336Z"
+    },
+    {
+      "Title": "Rutuja",
+      "Desc": "hello....",
+      "Created_By": "shr@gmail.com",
+      "Created_At": "2025-09-17 16:08:08",
+      "id": "d64a",
+      "likes": 7
     }
   ]
 }

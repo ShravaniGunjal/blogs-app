@@ -14,8 +14,8 @@ function Dashboard() {
             <div className="header">
                 <div>Blogs</div>
                 <div className="headerRightSection">
-                    <span>Login</span>
-                    <span>Register</span>
+                    <span onClick={navigateToLogin}>Login</span>
+                    <span onClick={navigateToRegister}>Register</span>
                 </div>
             </div>
             <div>
