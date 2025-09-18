@@ -96,13 +96,17 @@ function HelloWorld() {
                         <div>{singleEle.Desc}</div>
                         <div className="buttons">
                             <div>
+                                
                                 <button className="like" onClick={() => handleLikes(singleEle.id, singleEle.likes)}><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> {singleEle.likes}</button>
                                 <button className="dislike" onClick={() => handleDisLikes(singleEle.id, singleEle.dislikes)}><i class="fa fa-thumbs-o-down" aria-hidden="true"></i> {singleEle.dislikes}</button>
                             </div>
-                            <div>
+                             {singleEle.Created_By===localStorage.getItem("email")?( 
+                            <div> 
                                 <button className="edit" onClick={() => navigate(`/title/${singleEle.id}`)}><i class="fa fa-pencil" aria-hidden="true" ></i> Edit</button>
                                 <button className="delete" onClick={() => handleDeleteBlog(singleEle.id)}><i class="fa fa-trash" aria-hidden="true" ></i> Delete</button>
-                            </div>
+                               </div>
+                            ):null}
+                            
                         </div>
                     </div>
 

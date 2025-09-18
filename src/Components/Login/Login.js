@@ -18,27 +18,31 @@ const[userData,setuserData]=useState({email:"", password:""})
 
 function handleLoginData(){
     console.log(userData)
-   
+    if (!userData.email || !userData.password) {
+    alert("Please fill in both email and password.");
+    return;
+  }
     axios.get("http://localhost:3001/user", userData)
 
     .then((response)=>{
-        
+         const user=response.data.find(
+            (singleElement)=>
+                singleElement.email===userData.email && singleElement.password===userData.password
+         );
  
     
-       response.data.map((singleElement)=>{
-            if(singleElement.email === userData.email && singleElement.password === userData.password){
-                localStorage.setItem('userName',singleElement.name)
-                localStorage.setItem('email',singleElement.email)
+      
+            if(user){
+                localStorage.setItem('userName',user.name)
+                localStorage.setItem('email',user.email)
                
            console.log("Logged In Successfully")
          navigate("/helloworld")
             }
-            else{
-                console.log("Invalid user");
-                // alert("Invalid user")
-
-        }
-        })
+             else {
+                console.log("Invalid User")
+            }
+        
     
 })};
 function handleEmail(event){
