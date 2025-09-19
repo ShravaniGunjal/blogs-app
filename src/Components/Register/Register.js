@@ -11,17 +11,15 @@ function Register() {
 
     function handleRegistrationData() {
         console.log(userData)
+        if(!userData.name || !userData.email || !userData.password){
+            alert("Please enter valid details");
+        return;
+        }
         axios.post('http://localhost:3001/user', userData)
-            .then((singleElement) => {
-                console.log('User Registered:', singleElement.data);
-                navigate("/login")
-                setuserData({
-                    name: '',
-                    email: '',
-                    password: ''
-                });
+           .then(()=>{
+         navigate("/login")
             })
-    }
+        }
     function handleName(event) {
         let user = { ...userData }
         user["name"] = event.target.value
@@ -36,7 +34,7 @@ function Register() {
         let user = { ...userData }
         user["password"] = event.target.value
         setuserData(user)
-    }
+           }
     return (
         <div className="background">
             <div className="header">

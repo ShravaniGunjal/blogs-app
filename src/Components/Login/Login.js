@@ -19,7 +19,7 @@ const[userData,setuserData]=useState({email:"", password:""})
 function handleLoginData(){
     console.log(userData)
     if (!userData.email || !userData.password) {
-    alert("Please fill in both email and password.");
+    alert("Please fill both email and password.");
     return;
   }
     axios.get("http://localhost:3001/user", userData)
@@ -29,7 +29,7 @@ function handleLoginData(){
             (singleElement)=>
                 singleElement.email===userData.email && singleElement.password===userData.password
          );
- 
+
     
       
             if(user){

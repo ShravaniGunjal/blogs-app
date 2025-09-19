@@ -17,6 +17,7 @@ const [userTitle,setuserTitle]=useState({Title:"", Desc:""});
 //     axios.post('http://localhost:3001/blogs', userTitle)
 //     navigate("/helloworld")
 // }
+const 
 function handleTitle(event){
     let user={...userTitle}
     user["Title"]=event.target.value
@@ -37,6 +38,7 @@ useEffect(()=>{
 function handleEditBlog(){
     const email=localStorage.getItem("email")
     console.log(email)
+    if(!userTitle.Title ||)
     if (id) {
       
       axios.put(`http://localhost:3001/blogs/${id}`, userTitle)

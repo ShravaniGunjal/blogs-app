@@ -1,11 +1,40 @@
 {
   "user": [
-   
     {
       "id": "b9df",
       "name": "Shravani",
       "email": "shra@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "3476",
+      "name": "Shravani",
+      "email": "shravani.gunjal05@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "384d",
+      "name": "Shravani G",
+      "email": "gunjal@gmail.com",
+      "password": "2345"
+    },
+    {
+      "id": "4697",
+      "name": "Shravani G",
+      "email": "gunjal@gmail.com",
+      "password": "2345"
+    },
+    {
+      "id": "a7b3",
+      "name": "Shravani G",
+      "email": "gunjal@gmail.com",
+      "password": "2345"
+    },
+    {
+      "id": "b0ab",
+      "name": "Shravani G",
+      "email": "gunjal@gmail.com",
+      "password": "2345"
     }
   ],
   "blogs": [
